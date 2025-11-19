@@ -1,0 +1,151 @@
+:root {
+    --
+ }
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-style: solid;
+    border-color: rgb(255, 0, 0);
+    align-items: center;
+}
+.logo {
+    display: flex;
+    border-style: solid;
+    border-color: rgb(255, 0, 0);
+    height: 100%;
+    padding: 15px;   
+}
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    border-style: solid;
+    border-color: rgb(255, 0, 0);  
+    height: 100%;
+}
+nav ul li {
+     position: relative;
+     display: flex;
+     border-style: solid;
+     border-color: rgb(255, 0, 0);
+     padding: 0 25px;
+     height: 100%;
+     align-items: center;
+}
+nav ul a {
+    text-decoration: none;
+    list-style: none;   
+}
+.nav-items{
+ 
+}
+.nav-items li {
+   position: relative;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #ccc;
+    list-style: none;
+    width: 150px;
+}
+.dropdown li{
+    padding: 10px;
+}
+.dropdown li:hover{
+    background: rgb(196, 18, 151);
+}
+nav ul li:hover > ul{
+    display: block;
+}
+.dropdown li:hover {
+    background: rgb(196, 18, 151);
+}
+
+/* Aktiviert Dropdown per Klick */
+
+/*Querry*/
+@media (max-width: 768px) {
+
+nav {
+justify-content: space-between;
+    }
+nav ul {
+        display: none;
+        height: auto;
+      
+}
+nav ul li {
+    position: relative;
+   
+}
+.menu-toggle{
+    display: block;
+    height: 100%;
+    border-style: solid;
+    border-color: rgb(255, 0, 0);  
+    padding: 15px; 
+}
+.nav-items {
+    display: none; /* Standardmäßig versteckt */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgb(19, 190, 13);
+    align-items: center;
+    justify-content: center;  
+}
+.nav-items li a{
+    align-items: center;
+    justify-content: center;  
+   
+}
+.nav-items li {
+        display: block;
+        width: 100%;
+        padding: 0px;
+        align-items: center;
+        justify-content: center;  
+}
+
+nav ul li:hover > ul{
+    display: none;
+}
+.nav-items.nav-active { 
+    display: flex !important;
+    align-items: center;
+    justify-content: center;  
+}
+
+.dropdown {
+ 
+    display: none;  /* Standardmäßig ausgeblendet */
+}
+.dropdown li {
+    padding: 5px 5px;
+}
+.drop-active .dropdown {
+    display: block; 
+    position: relative;
+    left: 0;
+    top: 100%;
+    width: 100%;
+   
+    
+}
+}
